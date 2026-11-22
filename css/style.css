@@ -1,0 +1,604 @@
+/* 15歳のAI・ガジェット研究所 — Phase 1 skeleton
+   Soft Cyberpunk / Dark Research Lab
+   Mobile-first (スマホ6割・PC4割想定)
+*/
+
+/* ==============================
+   Color System
+============================== */
+:root {
+  /* Background */
+  --bg: #0b1020;
+  --bg2: #10182a;
+  --panel: #141c2e;
+  --panel-hover: #1b263a;
+
+  /* Borders */
+  --line: #26324a;
+  --line-accent: rgba(117, 213, 232, 0.25);
+
+  /* Accent Colors */
+  --neon-cyan: #75d5e8;
+  --neon-magenta: #d5a0e8;
+  --neon-yellow: #d9c47a;
+
+  /* Text */
+  --text: #e4eaf4;
+  --muted: #a3b1c6;
+  --muted-dark: #77869d;
+
+  /* Utility */
+  --danger: #f28b8b;
+
+  /* Glow */
+  --glow-cyan: rgba(117, 213, 232, 0.12);
+  --glow-magenta: rgba(213, 160, 232, 0.10);
+  --glow-yellow: rgba(217, 196, 122, 0.10);
+}
+
+/* ==============================
+   Base
+============================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background-color: var(--bg);
+
+  /* Subtle cyberpunk grid */
+  background-image:
+    linear-gradient(
+      rgba(117, 213, 232, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(117, 213, 232, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+
+  color: var(--text);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    sans-serif;
+
+  line-height: 1.8;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration-color: rgba(117, 213, 232, 0.35);
+  text-underline-offset: 3px;
+
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: #a6eaf5;
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ==============================
+   Header
+============================== */
+.site-header {
+  border-bottom: 1px solid var(--line-accent);
+
+  background:
+    linear-gradient(
+      180deg,
+      #141c2e,
+      #0b1020
+    );
+
+  padding: 20px 0 16px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.site-header h1 {
+  margin: 0;
+
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+
+  color: var(--text);
+
+  text-shadow:
+    0 0 12px rgba(117, 213, 232, 0.08);
+}
+
+/* 15歳のブランドカラー */
+.site-header h1 .age {
+  color: var(--neon-magenta);
+
+  border: 1px solid var(--neon-magenta);
+
+  padding: 0 0.3em;
+  margin-right: 0.2em;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 0 10px var(--glow-magenta);
+}
+
+.site-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px 16px;
+  margin-top: 12px;
+
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  color: var(--muted);
+}
+
+.site-nav a:hover {
+  color: var(--neon-cyan);
+  border-bottom-color: var(--neon-cyan);
+}
+
+/* ==============================
+   Hero
+============================== */
+.hero {
+  margin: 24px 0;
+  padding: 24px 20px;
+
+  border: 1px solid rgba(213, 160, 232, 0.3);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(213, 160, 232, 0.035),
+      transparent 50%
+    ),
+    var(--bg2);
+
+  box-shadow:
+    0 0 20px var(--glow-magenta),
+    inset 0 0 30px rgba(117, 213, 232, 0.025);
+}
+
+.hero h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+.hero h2 .age {
+  color: var(--neon-magenta);
+
+  text-shadow:
+    0 0 12px rgba(213, 160, 232, 0.18);
+}
+
+.hero p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+/* ==============================
+   Buttons
+============================== */
+.btn {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  border: 1px solid var(--neon-cyan);
+  border-radius: 8px;
+
+  color: var(--neon-cyan);
+  background: rgba(117, 213, 232, 0.05);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  box-shadow:
+    0 0 10px rgba(117, 213, 232, 0.08);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--neon-cyan);
+  color: var(--bg);
+
+  box-shadow:
+    0 0 16px rgba(117, 213, 232, 0.18);
+
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   Sections
+============================== */
+section {
+  margin: 40px 0;
+}
+
+section > h2 {
+  font-size: 1.3rem;
+
+  border-left: 4px solid var(--neon-cyan);
+  padding-left: 12px;
+
+  color: var(--text);
+
+  text-shadow:
+    0 0 10px rgba(117, 213, 232, 0.08);
+}
+
+section > h3 {
+  font-size: 1.05rem;
+
+  color: var(--neon-magenta);
+
+  margin: 24px 0 8px;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   Disclaimer
+============================== */
+.disclaimer {
+  border: 1px dashed rgba(217, 196, 122, 0.5);
+  border-radius: 8px;
+
+  padding: 10px 12px;
+
+  color: var(--neon-yellow);
+  background: rgba(217, 196, 122, 0.04);
+
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   Tables
+============================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  margin: 12px 0;
+
+  font-size: 0.95rem;
+
+  background: var(--panel);
+}
+
+th,
+td {
+  padding: 10px 8px;
+
+  border-bottom: 1px solid var(--line);
+
+  text-align: left;
+}
+
+th {
+  color: var(--neon-cyan);
+
+  background: #1c2b40;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+td {
+  color: var(--text);
+}
+
+td.score {
+  font-weight: bold;
+  color: var(--neon-yellow);
+  font-size: 1.1rem;
+}
+
+/* Top-ranked item */
+tr.top1 td {
+  background: rgba(217, 196, 122, 0.055);
+}
+
+tr.top1 td.score {
+  color: var(--neon-yellow);
+}
+
+/* Score visualization */
+.score-bar {
+  height: 8px;
+
+  background: var(--line);
+
+  margin-top: 4px;
+
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-bar > span {
+  display: block;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--neon-cyan),
+      var(--neon-magenta)
+    );
+
+  border-radius: 999px;
+}
+
+/* ==============================
+   Special Frame
+============================== */
+.special {
+  border: 1px solid rgba(217, 196, 122, 0.45);
+  border-radius: 10px;
+
+  padding: 14px 16px;
+  margin: 16px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(217, 196, 122, 0.045),
+      transparent 65%
+    ),
+    var(--panel);
+}
+
+.special h3 {
+  margin: 0 0 6px;
+  color: var(--neon-yellow);
+}
+
+.special .tag {
+  display: inline-block;
+
+  background: var(--neon-yellow);
+  color: var(--bg);
+
+  font-weight: bold;
+  font-size: 0.8rem;
+
+  padding: 2px 8px;
+  margin-left: 8px;
+
+  border-radius: 4px;
+}
+
+/* ==============================
+   Cards / Placeholders
+============================== */
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  background: var(--panel);
+
+  padding: 16px;
+  margin: 12px 0;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  background: var(--panel-hover);
+
+  border-color: var(--line-accent);
+
+  box-shadow:
+    0 0 16px var(--glow-cyan);
+}
+
+.placeholder {
+  border: 1px dashed var(--muted-dark);
+  border-radius: 10px;
+
+  color: var(--muted);
+
+  background: rgba(20, 28, 46, 0.65);
+
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.placeholder strong {
+  color: var(--text);
+}
+
+/* ==============================
+   Criteria Tags
+============================== */
+.criteria {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.criteria li {
+  border: 1px solid rgba(117, 213, 232, 0.35);
+  border-radius: 6px;
+
+  background: rgba(117, 213, 232, 0.045);
+
+  padding: 4px 10px;
+
+  font-size: 0.85rem;
+
+  color: var(--neon-cyan);
+}
+
+/* ==============================
+   Footer
+============================== */
+.site-footer {
+  border-top: 1px solid rgba(213, 160, 232, 0.3);
+
+  padding: 20px 0 32px;
+
+  color: var(--muted);
+  font-size: 0.9rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(213, 160, 232, 0.015)
+    );
+}
+
+.site-footer .age {
+  color: var(--neon-magenta);
+  font-weight: bold;
+}
+
+/* ==============================
+   Mobile Optimization
+============================== */
+@media (max-width: 719px) {
+  body {
+    background-size: 24px 24px;
+
+    background-image:
+      linear-gradient(
+        rgba(117, 213, 232, 0.025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(117, 213, 232, 0.025) 1px,
+        transparent 1px
+      );
+  }
+
+  .site-header {
+    padding: 16px 0 14px;
+  }
+
+  .site-header h1 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .hero {
+    padding: 20px 16px;
+  }
+
+  .hero h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 12px 16px;
+  }
+
+  section {
+    margin: 32px 0;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 9px 7px;
+  }
+}
+
+/* ==============================
+   PC: 40%
+   Wider layout, two columns
+============================== */
+@media (min-width: 720px) {
+  .site-header h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==============================
+   Reduced Motion
+============================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
