@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15歳のAI・ガジェット研究所</title>
+<meta name="description" content="15歳（中学3年生）が、実際に使ったAIとガジェットの記録を点数とデータで残すWebサイト。AI批評TOP10、実機データベース、スマホ批評を掲載。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1><span class="age">15歳</span>のAI・ガジェット研究所</h1>
+    <p>AI × ガジェット × 15歳の実体験 — 15歳が本気で採点しました。</p>
+    <nav class="site-nav" aria-label="サイト内リンク">
+      <a href="#ai">AI批評</a>
+      <a href="#devices">実機データベース</a>
+      <a href="#phones">スマホ批評</a>
+      <a href="#juno">Juno実験</a>
+      <a href="#simulator">シミュレーター（準備中）</a>
+      <a href="#log">開発記録</a>
+      <a href="https://note.com/pure_donkey1452" target="_blank" rel="noopener">note「15歳視点 | AI・ガジェット研究室」</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-label="紹介">
+    <h2><span class="age">15歳</span>の目線で、AIとガジェットを採点する。</h2>
+    <p>このサイトは、15歳（中学3年生）のリョウが、実際に使ったAIとガジェットの記録を、点数とデータで残す研究所です。買う・使う直前の判断に迷う学生や格安ユーザーのために作っています。更新は週1回を目安にしています。</p>
+    <p><a class="btn" href="#ai">AI批評 TOP10を見る</a></p>
+  </section>
+
+  <section id="ai" aria-label="AI批評">
+    <h2>AI批評データ — TOP10</h2>
+    <p class="note">15歳による採点（100点満点）。採点基準は回答の質30／無料枠の広さ25／日本語の自然さ15／速さと使いやすさ15／学生の実用15です。内訳は簡単な表示にしています。31件すべての内訳は掲載しません。</p>
+    <div id="ai-ranking" data-loading><p class="note">読み込み中…</p></div>
+  </section>
+
+  <section id="devices" aria-label="実機データベース">
+    <h2>実機データベース</h2>
+    <p class="note">本人が実際に使っている機種だけの満足度です。持っていない機種はここには載せません。</p>
+    <div id="device-list" data-loading><p class="note">読み込み中…</p></div>
+  </section>
+
+  <section id="phones" aria-label="スマホ批評">
+    <h2>スマホ批評データ</h2>
+    <p class="note">フラッグシップ版とコスパ版は別コーナー（棲み分け）として掲載します。以下の機種は本人が持っていない機種の判断記事であり、実体験レビューではありません。</p>
+    <div id="phone-list" data-loading><p class="note">読み込み中…</p></div>
+  </section>
+
+  <section id="juno" aria-label="Juno実験">
+    <h2>Juno実験 — Python・データ処理</h2>
+    <div class="placeholder">
+      <strong>準備中：グラフはまだありません。</strong>
+      <p>Juno（iPhone・無料の範囲）でPythonを実行して作るグラフをここに載せます。グラフは作り次第、data/ に追加します。いまは画像を作らないでください。</p>
+      <ul>
+        <li>実験1：note運営データのグラフ化</li>
+        <li>実験2：AI批評の採点データの集計・棒グラフ化</li>
+        <li>実験3：実機の価格と満足度の散布図化</li>
+      </ul>
+      <p>手順と再現方法は <code>juno/README.md</code> を見てください。</p>
+    </div>
+  </section>
+
+  <section id="simulator" aria-label="中古スマホ判断シミュレーター">
+    <h2>中古スマホ判断シミュレーター（フェーズ2・暫定版から）</h2>
+    <div class="placeholder">
+      <strong>準備中：フェーズ2の暫定版です。</strong>
+      <p>予算と条件を選ぶと、本人の批評データから機種を返す対話型ツールにする予定です。条件はストレージ・FeliCa・バッテリー等です。povo対応は条件に含めません。</p>
+    </div>
+  </section>
+
+  <section id="log" aria-label="開発記録">
+    <h2>開発記録</h2>
+    <div class="placeholder">
+      <strong>準備中</strong>
+      <p>このサイト自体をどう作ったかの記録（失敗も含む）をここに残します。開発の進み具合は週1回を目安に更新します。</p>
+      <ul>
+        <li>2026-11-22：要件定義・サイトの骨格（Phase 1）を作成</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><span class="age">15歳</span>のAI・ガジェット研究所 — 15歳（中学3年生）のリョウが運営しています。</p>
+    <p>note「15歳視点 | AI・ガジェット研究室」：<a href="https://note.com/pure_donkey1452" target="_blank" rel="noopener">https://note.com/pure_donkey1452</a></p>
+    <p>価格・スペックは確認日を併記し、裏取りしていない数字は掲載しません。持っていない機種は実体験として書かず、「15歳の条件で買うか」の判断として扱います。</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
