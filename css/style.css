@@ -1,5 +1,5 @@
 /* 15歳のAI・ガジェット研究所 — Phase 1 skeleton
-   Soft Cyberpunk / Dark Research Lab
+   Muted Cyberpunk / Soft Research Lab
    Mobile-first (スマホ6割・PC4割想定)
 */
 
@@ -8,32 +8,32 @@
 ============================== */
 :root {
   /* Background */
-  --bg: #0b1020;
-  --bg2: #10182a;
-  --panel: #141c2e;
-  --panel-hover: #1b263a;
+  --bg: #121A2B;
+  --bg2: #182235;
+  --panel: #1B2435;
+  --panel-hover: #222D40;
 
   /* Borders */
-  --line: #26324a;
-  --line-accent: rgba(117, 213, 232, 0.25);
+  --line: #344157;
+  --line-accent: rgba(143, 187, 198, 0.20);
 
   /* Accent Colors */
-  --neon-cyan: #75d5e8;
-  --neon-magenta: #d5a0e8;
-  --neon-yellow: #d9c47a;
+  --neon-cyan: #8FBBC6;
+  --neon-magenta: #BFA3CC;
+  --neon-yellow: #C6B78A;
 
   /* Text */
-  --text: #e4eaf4;
-  --muted: #a3b1c6;
-  --muted-dark: #77869d;
+  --text: #EDF1F7;
+  --muted: #B7C2D2;
+  --muted-dark: #8A97AA;
 
   /* Utility */
-  --danger: #f28b8b;
+  --danger: #D99595;
 
   /* Glow */
-  --glow-cyan: rgba(117, 213, 232, 0.12);
-  --glow-magenta: rgba(213, 160, 232, 0.10);
-  --glow-yellow: rgba(217, 196, 122, 0.10);
+  --glow-cyan: rgba(143, 187, 198, 0.045);
+  --glow-magenta: rgba(191, 163, 204, 0.04);
+  --glow-yellow: rgba(198, 183, 138, 0.04);
 }
 
 /* ==============================
@@ -52,15 +52,15 @@ body {
 
   background-color: var(--bg);
 
-  /* Subtle cyberpunk grid */
+  /* Extremely subtle research grid */
   background-image:
     linear-gradient(
-      rgba(117, 213, 232, 0.035) 1px,
+      rgba(143, 187, 198, 0.018) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(117, 213, 232, 0.035) 1px,
+      rgba(143, 187, 198, 0.018) 1px,
       transparent 1px
     );
 
@@ -80,7 +80,7 @@ body {
 
 a {
   color: var(--neon-cyan);
-  text-decoration-color: rgba(117, 213, 232, 0.35);
+  text-decoration-color: rgba(143, 187, 198, 0.30);
   text-underline-offset: 3px;
 
   transition:
@@ -89,7 +89,7 @@ a {
 }
 
 a:hover {
-  color: #a6eaf5;
+  color: #B4D5DC;
   text-decoration-color: currentColor;
 }
 
@@ -114,14 +114,14 @@ a:focus-visible {
   background:
     linear-gradient(
       180deg,
-      #141c2e,
-      #0b1020
+      #1B2435,
+      #121A2B
     );
 
   padding: 20px 0 16px;
 
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.12);
+    0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .site-header h1 {
@@ -134,7 +134,7 @@ a:focus-visible {
   color: var(--text);
 
   text-shadow:
-    0 0 12px rgba(117, 213, 232, 0.08);
+    0 0 8px rgba(143, 187, 198, 0.035);
 }
 
 /* 15歳のブランドカラー */
@@ -149,7 +149,7 @@ a:focus-visible {
   border-radius: 4px;
 
   box-shadow:
-    0 0 10px var(--glow-magenta);
+    0 0 6px var(--glow-magenta);
 }
 
 .site-header p {
@@ -186,20 +186,20 @@ a:focus-visible {
   margin: 24px 0;
   padding: 24px 20px;
 
-  border: 1px solid rgba(213, 160, 232, 0.3);
+  border: 1px solid rgba(191, 163, 204, 0.24);
   border-radius: 12px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(213, 160, 232, 0.035),
+      rgba(191, 163, 204, 0.025),
       transparent 50%
     ),
     var(--bg2);
 
   box-shadow:
-    0 0 20px var(--glow-magenta),
-    inset 0 0 30px rgba(117, 213, 232, 0.025);
+    0 0 14px var(--glow-magenta),
+    inset 0 0 24px rgba(143, 187, 198, 0.015);
 }
 
 .hero h2 {
@@ -212,7 +212,7 @@ a:focus-visible {
   color: var(--neon-magenta);
 
   text-shadow:
-    0 0 12px rgba(213, 160, 232, 0.18);
+    0 0 8px rgba(191, 163, 204, 0.06);
 }
 
 .hero p {
@@ -232,13 +232,13 @@ a:focus-visible {
   border-radius: 8px;
 
   color: var(--neon-cyan);
-  background: rgba(117, 213, 232, 0.05);
+  background: rgba(143, 187, 198, 0.035);
 
   text-decoration: none;
   font-weight: bold;
 
   box-shadow:
-    0 0 10px rgba(117, 213, 232, 0.08);
+    0 0 6px rgba(143, 187, 198, 0.04);
 
   transition:
     background 0.2s ease,
@@ -252,7 +252,7 @@ a:focus-visible {
   color: var(--bg);
 
   box-shadow:
-    0 0 16px rgba(117, 213, 232, 0.18);
+    0 0 10px rgba(143, 187, 198, 0.08);
 
   transform: translateY(-1px);
 }
@@ -273,7 +273,7 @@ section > h2 {
   color: var(--text);
 
   text-shadow:
-    0 0 10px rgba(117, 213, 232, 0.08);
+    0 0 6px rgba(143, 187, 198, 0.035);
 }
 
 section > h3 {
@@ -293,13 +293,13 @@ section > h3 {
    Disclaimer
 ============================== */
 .disclaimer {
-  border: 1px dashed rgba(217, 196, 122, 0.5);
+  border: 1px dashed rgba(198, 183, 138, 0.32);
   border-radius: 8px;
 
   padding: 10px 12px;
 
   color: var(--neon-yellow);
-  background: rgba(217, 196, 122, 0.04);
+  background: rgba(198, 183, 138, 0.025);
 
   font-size: 0.9rem;
 }
@@ -330,7 +330,7 @@ td {
 th {
   color: var(--neon-cyan);
 
-  background: #1c2b40;
+  background: #222D40;
 
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -348,7 +348,7 @@ td.score {
 
 /* Top-ranked item */
 tr.top1 td {
-  background: rgba(217, 196, 122, 0.055);
+  background: rgba(198, 183, 138, 0.035);
 }
 
 tr.top1 td.score {
@@ -385,7 +385,7 @@ tr.top1 td.score {
    Special Frame
 ============================== */
 .special {
-  border: 1px solid rgba(217, 196, 122, 0.45);
+  border: 1px solid rgba(198, 183, 138, 0.30);
   border-radius: 10px;
 
   padding: 14px 16px;
@@ -394,7 +394,7 @@ tr.top1 td.score {
   background:
     linear-gradient(
       135deg,
-      rgba(217, 196, 122, 0.045),
+      rgba(198, 183, 138, 0.025),
       transparent 65%
     ),
     var(--panel);
@@ -444,7 +444,7 @@ tr.top1 td.score {
   border-color: var(--line-accent);
 
   box-shadow:
-    0 0 16px var(--glow-cyan);
+    0 0 10px var(--glow-cyan);
 }
 
 .placeholder {
@@ -453,7 +453,7 @@ tr.top1 td.score {
 
   color: var(--muted);
 
-  background: rgba(20, 28, 46, 0.65);
+  background: rgba(27, 36, 53, 0.65);
 
   padding: 16px;
   margin: 12px 0;
@@ -478,10 +478,10 @@ tr.top1 td.score {
 }
 
 .criteria li {
-  border: 1px solid rgba(117, 213, 232, 0.35);
+  border: 1px solid rgba(143, 187, 198, 0.28);
   border-radius: 6px;
 
-  background: rgba(117, 213, 232, 0.045);
+  background: rgba(143, 187, 198, 0.025);
 
   padding: 4px 10px;
 
@@ -494,7 +494,7 @@ tr.top1 td.score {
    Footer
 ============================== */
 .site-footer {
-  border-top: 1px solid rgba(213, 160, 232, 0.3);
+  border-top: 1px solid rgba(191, 163, 204, 0.22);
 
   padding: 20px 0 32px;
 
@@ -505,7 +505,7 @@ tr.top1 td.score {
     linear-gradient(
       180deg,
       transparent,
-      rgba(213, 160, 232, 0.015)
+      rgba(191, 163, 204, 0.01)
     );
 }
 
@@ -523,12 +523,12 @@ tr.top1 td.score {
 
     background-image:
       linear-gradient(
-        rgba(117, 213, 232, 0.025) 1px,
+        rgba(143, 187, 198, 0.012) 1px,
         transparent 1px
       ),
       linear-gradient(
         90deg,
-        rgba(117, 213, 232, 0.025) 1px,
+        rgba(143, 187, 198, 0.012) 1px,
         transparent 1px
       );
   }
