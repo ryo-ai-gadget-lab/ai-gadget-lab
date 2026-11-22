@@ -51,24 +51,60 @@
 
   <section id="juno" aria-label="Juno実験">
     <h2>Juno実験 — Python・データ処理</h2>
-    <div class="placeholder">
-      <strong>準備中：グラフはまだありません。</strong>
-      <p>Juno（iPhone・無料の範囲）でPythonを実行して作るグラフをここに載せます。グラフは作り次第、data/ に追加します。いまは画像を作らないでください。</p>
-      <ul>
-        <li>実験1：note運営データのグラフ化</li>
-        <li>実験2：AI批評の採点データの集計・棒グラフ化</li>
-        <li>実験3：実機の価格と満足度の散布図化</li>
-      </ul>
-      <p>手順と再現方法は <code>juno/README.md</code> を見てください。</p>
-    </div>
+    <p class="note">Juno（iPhone・無料の範囲）でPythonを実行して作ったグラフです。コードは <code>juno/</code> にあります。</p>
+    <h3>実験1：note運営データのグラフ化</h3>
+    <figure>
+      <img src="data/chart-note-periods.png" alt="noteの28日間合計の比較。インプレッションは2,840から2,978に、ページビューは184から238に増えた" style="max-width:100%;height:auto">
+      <figcaption class="note">28日間の合計の比較。左：インプレッション（2026/9/28〜10/25は2,840、2026/10/26〜11/22は2,978）、右：ページビュー（184→238）。出典：noteアクセス状況、2026-11-22 15:50集計。日別の数値はスクリーンショットから読めないため、日別推移グラフは作っていません。</figcaption>
+    </figure>
+    <figure>
+      <img src="data/chart-note-inflow.png" alt="記事の流入元の円グラフ。Google 41.8%、note.com 35.1%、no referrer 15.9%" style="max-width:100%;height:auto">
+      <figcaption class="note">記事の流入元（PVベース）。Google 41.8%（100PV）、note.com 35.1%（84PV）、no referrer 15.9%（38PV）、search.yahoo.co.jp 3.3%（8PV）、www.bing.com 2.5%（6PV）、duckduckgo.com 1.3%（3PV）。出典：noteアクセス状況、2026-11-22 15:50集計。直近1ヶ月のまとめ：スキ8件、フォロワー増加3人、記事数7件公開。</figcaption>
+    </figure>
+    <h3>実験2：AI批評の採点データの集計・棒グラフ化</h3>
+    <figure>
+      <img src="data/chart-ai-top10.png" alt="AI批評TOP10の横棒グラフ。1位 ChatGPT 87点、2位 Muse 84点、特別枠 Claude Ultra 67点" style="max-width:100%;height:auto">
+      <figcaption class="note">AI批評TOP10の合計点（100点満点）。1位 ChatGPT 87点、2位 Muse 84点、3位 Gemini 79点。Claude Ultra 67点は18歳以上限定の特別枠です。31AIすべての5基準内訳は元データにないため、合計点のみを描いています。</figcaption>
+    </figure>
+    <h3>実験3：実機の価格と満足度の散布図化</h3>
+    <figure>
+      <img src="data/chart-devices.png" alt="実機の価格と満足度の散布図。iPhone 11は38,000円で70点、POCO F7 Proは約60,000円で85点" style="max-width:100%;height:auto">
+      <figcaption class="note">実機の価格 vs 満足度。プロットは価格が確認できている2台だけです：iPhone 11（38,000円・70点）、POCO F7 Pro（約60,000円・85点）。Galaxy A25 5G（60点）は価格が未確認のため除外、Xiaomi PadとゲーミングPCは未採点のため除外しています。2点だけなので傾向の主張はしません。</figcaption>
+    </figure>
   </section>
 
   <section id="simulator" aria-label="中古スマホ判断シミュレーター">
-    <h2>中古スマホ判断シミュレーター（フェーズ2・暫定版から）</h2>
-    <div class="placeholder">
-      <strong>準備中：フェーズ2の暫定版です。</strong>
-      <p>予算と条件を選ぶと、本人の批評データから機種を返す対話型ツールにする予定です。条件はストレージ・FeliCa・バッテリー等です。povo対応は条件に含めません。</p>
+    <h2>中古スマホ判断シミュレーター（フェーズ2・暫定版）</h2>
+    <p class="note">予算と条件を選ぶと、本人の批評データから機種を返します。データ源はスマホ批評TOP5（フラッグシップ版とコスパ版）だけです。povo対応は条件に含めません。</p>
+    <div class="card">
+      <p><label for="sim-budget">予算（一括で払える金額）</label><br>
+      <select id="sim-budget">
+        <option value="3000">お小遣い1ヶ月分（3,000円）</option>
+        <option value="10000">10,000円</option>
+        <option value="30000" selected>30,000円</option>
+        <option value="60000">60,000円</option>
+        <option value="100000">100,000円〜</option>
+      </select></p>
+      <p><label for="sim-storage">ストレージ</label><br>
+      <select id="sim-storage">
+        <option value="any" selected>どちらでも</option>
+        <option value="64GB">64GBで十分</option>
+        <option value="128GB">128GBほしい</option>
+        <option value="256GB">256GB〜ほしい</option>
+      </select></p>
+      <p><label for="sim-felica">FeliCa（おサイフケータイ）</label><br>
+      <select id="sim-felica">
+        <option value="any" selected>どちらでも</option>
+        <option value="must">必須</option>
+      </select></p>
+      <p><label for="sim-battery">バッテリー</label><br>
+      <select id="sim-battery">
+        <option value="any" selected>どちらでも</option>
+        <option value="important">重視する</option>
+      </select></p>
+      <p><button class="btn" id="sim-run" type="button">機種を探す</button></p>
     </div>
+    <div id="sim-result" aria-live="polite"></div>
   </section>
 
   <section id="log" aria-label="開発記録">
@@ -78,6 +114,8 @@
       <p>このサイト自体をどう作ったかの記録（失敗も含む）をここに残します。開発の進み具合は週1回を目安に更新します。</p>
       <ul>
         <li>2026-11-22：要件定義・サイトの骨格（Phase 1）を作成</li>
+        <li>2026-11-22：ChatGPT相談で配色をソフト版に修正し、GitHub Pagesで公開</li>
+        <li>2026-11-22：Juno実験3件のグラフとシミュレーター暫定版を追加</li>
       </ul>
     </div>
   </section>
@@ -92,5 +130,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/simulator.js"></script>
 </body>
 </html>
