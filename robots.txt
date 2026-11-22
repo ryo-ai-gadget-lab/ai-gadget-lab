@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ryo-ai-gadget-lab.github.io/ai-gadget-lab/sitemap.xml
